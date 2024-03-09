@@ -13,4 +13,5 @@ model = YOLO('models/yolov9c.pt')
 # results = model.train(data='coco8.yaml', epochs=100, imgsz=640)
 
 # Run inference with the YOLOv9c model on the 'bus.jpg' image
-results = model("FastSAM\images\dogs.jpg")
+results = model("inputs/dragon.jpg")
+print(results)
