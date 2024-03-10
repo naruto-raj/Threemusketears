@@ -18,6 +18,7 @@
       flex-direction: column; /* Stack elements vertically */
       min-height: 100vh; /* Set minimum viewport height for full screen */
       margin: 0; /* Remove body margin for better responsiveness */
+      position: relative; /* Set position relative to position absolutely */
     }
     h1 {
       text-align: center;
@@ -25,49 +26,30 @@
       margin-top: 20px; /* Add margin to the top of the heading */
     }
     .video-container {
+      position: relative; /* Set position relative for absolute positioning */
       width: 100%;
       height: auto; /* Set video container height to auto */
       max-height: calc(80vh - 5px); /* Set maximum height relative to viewport */
       overflow: hidden;
-      position: relative;
     }
     .video-container video {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
-    .text-input {
-      margin: 20px auto;
-      text-align: center;
-      max-width: 500px;
-    }
-    .text-input input[type=text] {
-      width: 200%; /* Increase the width of the text input box */
+    .overlay-text {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
       padding: 10px;
-      border: none;
-      border-radius: 5px;
-      margin-right: 10px;
+      box-sizing: border-box;
     }
-    .text-input input[type=submit] {
-      background-color: #4CAF50;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    .text-input input[type=submit]:hover {
-      background-color: #45a049;
-    }
-
-    @media only screen and (max-width: 768px) {
-      /* Styles for screens smaller than 768px */
-      h1 {
-        font-size: 1.5rem; /* Adjust heading size for smaller screens */
-      }
-      .text-input {
-        margin: 10px auto;
-      }
+    .overlay-text p {
+      margin: 0;
+      padding: 0;
+      text-align: center;
     }
   </style>
 </head>
@@ -78,6 +60,9 @@
       <source src="{{ url_for('static', filename=video_url) }}" type="video/mp4">
       Your browser does not support the video tag.
     </video>
+    <div class="overlay-text">
+      <p>story textstory textstory textstory textstory textstory textstory textstory textstory textstory textstory textstory textstory text</p>
+    </div>
   </div>
   <div class="text-input">
     <form action="/submit" method="post">
