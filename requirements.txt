@@ -5,3 +5,4 @@ langchain_experimental==0.0.53
 Pillow==10.2.0
 Requests==2.31.0
 llama-cpp-python
+flask
