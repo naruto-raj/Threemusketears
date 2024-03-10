@@ -20,3 +20,9 @@ pip install -r requirements.txt
 ```bash
 python flask_video_loop/app.py
 ```
+Works best on Chrome
+
+## Example
+
+![knight vs dragon](knightvsdragon.png)
+![Travellers](travel.png)
