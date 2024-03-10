@@ -26,7 +26,7 @@
 
   <script>
     const textElement = document.getElementById('text');
-    const textContent = "You're a brave knight in the realm of dragons. You see a dragon guarding a cave with hidden treasure. What do you want to do? \n 1. Ride the dragon \n 2. Run for your life \n 3. Battle the beast";
+    const textContent = "{{ initial_text_content }}";
     let index = 0;
     let textAnimation = null;
 
@@ -37,7 +37,7 @@
         textAnimation = setTimeout(displayText, 100);
       } else {
         document.getElementById('inputContainer').style.display = 'block';
-        document.getElementById('text_prompt').focus();
+        // document.getElementById('text_prompt').focus();
       }
     }
 

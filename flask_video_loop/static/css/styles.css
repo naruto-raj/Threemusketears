@@ -51,7 +51,7 @@
     font-size: 24px;
     max-width: 100%;
     overflow: hidden;
-    animation: typing-animation 5s steps(40) forwards; /* Adjust duration and steps as needed */
+    animation: typing-animation 0.5s steps(40) forwards; /* Adjust duration and steps as needed */
   }
   
   @keyframes typing-animation {
@@ -74,7 +74,7 @@
     font-size: 16px;
     border: none;
     outline: none;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0);
     border-radius: 5px;
     color: white;
   }
