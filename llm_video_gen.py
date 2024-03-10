@@ -25,7 +25,7 @@ import threading
 # authentication
 engine_id = "stable-diffusion-v1-6"
 api_host = os.getenv('API_HOST', 'https://api.stability.ai')
-api_key = "sk-dBeXPNuA8GtHabuncaZ6a7uNHnJlnaLVuaz4olhxXOf3pcOn"
+api_key = "sk-uwKrRSeDMJwyBZmPsqyyaoARopFNGSXDuZRZmrhOLCIR4MUZ"
 
 #text to image
 def text_to_image(api_key, prompt, debug=False):
