@@ -18,7 +18,7 @@ pip install -r requirements.txt
 ```
 ### Run Game
 ```bash
-python flask_video_loop/app.py
+python flask/app.py
 ```
 Works best on Chrome
 
