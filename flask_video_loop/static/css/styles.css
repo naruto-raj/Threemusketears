@@ -78,4 +78,32 @@
     border-radius: 5px;
     color: white;
   }
-  
+  /* Overlay loading SVG */
+  #loading {
+    position: fixed;
+    top: 20%; /* Vertically center */
+    left: 50%; /* Horizontally center */
+    transform: translate(-50%, -50%); /* Move back by half of width and height */
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Ensure it's above other elements */
+  }
+  #loading svg {
+    width: 120px; /* 3 times the original size */
+    height: 120px; /* 3 times the original size */
+  }
+  .loading-message p{
+    text-align: left;
+    padding: 20px;
+    top: 20%;
+    left: 50%;
+    font-size: 24px;
+    max-width: 100%;
+    overflow: hidden;
+    color: white;
+    animation: typing-animation 5.0s steps(40) forwards; /* Adjust duration and steps as needed */
+  }
