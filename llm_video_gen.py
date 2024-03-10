@@ -120,8 +120,8 @@ def lang_chains():
         HumanMessagePromptTemplate.from_template("{text}"),
     ]
     prompt_template2 = ChatPromptTemplate.from_messages(template_message2)
-    model_path1 = "/Users/naveenrajg/Downloads/llama-2-7b-chat.Q2_K.gguf"
-    model_path2 = "/Users/naveenrajg/Downloads/llama-2-7b-chat.Q2_K.gguf"
+    model_path1 = "models/llama-2-7b-chat.Q2_K.gguf"
+    model_path2 = "models/llama-2-7b-chat.Q2_K.gguf"
 
     llm1 = LlamaCpp(
         model_path=model_path1,
@@ -192,16 +192,19 @@ def LLM_chat(text,chain1,chain2):
             text=text
         )
     return image_prompt,story
-
+def extract_options(story):
+    pattern = r"(\n|^)[a-zA-Z0-9]+[).:]\s*(.*?)(?=[\n\r]|$)"
+    matches = re.findall(pattern, story)
+    return [i[1] for i in matches if i[1]]
 # langchain llama
-chain1,chain2 = lang_chains()
+# chain1,chain2 = lang_chains()
 
-# prompts and generate image and video with next scene
-image_prompt,story = LLM_chat("A hungry Knight enters the realm of dragons",chain1,chain2)
-image_prompt = extract_prompt(image_prompt)
-image_data = text_to_image(api_key, image_prompt,debug=True)
-run_typing_effect(story)
-video_data = image_to_video(api_key, image_data,debug=True)
+# # prompts and generate image and video with next scene
+# image_prompt,story = LLM_chat("A hungry Knight enters the realm of dragons",chain1,chain2)
+# image_prompt = extract_prompt(image_prompt)
+# image_data = text_to_image(api_key, image_prompt,debug=True)
+# run_typing_effect(story)
+# video_data = image_to_video(api_key, image_data,debug=True)
 
 # image_prompt,story = LLM_chat("Try to find some shade and rest for a while before continuing on.",chain1,chain2)
 # image_data = text_to_image(api_key, extract_prompt(image_prompt),debug=True)
