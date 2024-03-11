@@ -16,11 +16,16 @@ source project-env/bin/activate
 pip install --upgrade pip
 pip install -r requirements.txt
 ```
+### Update your API key Stability AI in config.ini
 ### Run Game
 ```bash
 python flask/app.py
 ```
+
 Works best on Chrome
+```
+http://127.0.0.1:5000
+```
 
 ## Example
 

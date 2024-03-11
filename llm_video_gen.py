@@ -21,11 +21,22 @@ import requests
 import time
 import sys
 import threading
+import configparser
+
+def load_api_key(config_file):
+    config = configparser.ConfigParser()
+    config.read(config_file)
+    api_key = config.get('API', 'api_key')
+    return api_key
+
+# Example usage
+config_file = 'config.ini'
 
 # authentication
 engine_id = "stable-diffusion-v1-6"
 api_host = os.getenv('API_HOST', 'https://api.stability.ai')
-api_key = "sk-uwKrRSeDMJwyBZmPsqyyaoARopFNGSXDuZRZmrhOLCIR4MUZ"
+api_key = load_api_key(config_file)
+print(api_key)
 
 #text to image
 def text_to_image(api_key, prompt, debug=False):
