@@ -1,0 +1,4 @@
+# Ignore project-env or any env files
+project-env
+.DS_Store
+__pycache__/
